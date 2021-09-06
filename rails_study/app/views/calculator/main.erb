@@ -1,0 +1,16 @@
+<form action="/result" method="get">
+    <input type="nuber" name="num1" />
+    +
+    <input type="nuber" name="num2" />
+    <button type="submit">제출</button>
+</form>
+
+
+<%= form_tag "/result", method: :post do %>
+<%# <form action="/result" method="post"> %>
+    <input type="nuber" name="num1" />
+    +
+    <input type="nuber" name="num2" />
+    <button type="submit">제출</button>
+<%# </form> %>
+<% end %>
