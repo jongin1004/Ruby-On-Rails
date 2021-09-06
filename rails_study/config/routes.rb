@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/result" => "calculator#result"
   post "/result" => "calculator#result"
   get "/plus/:num1/:num2" => "calculator#plus"
+  post "/create" => "blog#create"
 end

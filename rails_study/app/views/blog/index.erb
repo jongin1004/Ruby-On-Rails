@@ -1,3 +1,19 @@
-<center>
-    <h1> 안녕하세요 </h1>
-</center>
+<% @posts.each do |post| %>
+<p>
+    제목 : <%= post.title %>
+</p>
+
+<p>
+    내용 : <%= post.description %>
+</p>
+<hr>
+<% end %>
+
+
+<%= form_tag "/create", method: :post do %>
+    <label for="title">제목</label>
+    <input type="text" name="title" /><br />
+    <label for="description">내용</label>
+    <input type="text" name="description" />
+    <button type="submit">제출</button>
+<% end %>
