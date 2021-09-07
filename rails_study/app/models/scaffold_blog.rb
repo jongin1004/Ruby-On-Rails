@@ -1,0 +1,2 @@
+class ScaffoldBlog < ApplicationRecord
+end

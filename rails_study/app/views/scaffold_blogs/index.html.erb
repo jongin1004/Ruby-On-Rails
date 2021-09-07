@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Scaffold Blogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scaffold_blogs.each do |scaffold_blog| %>
+      <tr>
+        <td><%= scaffold_blog.title %></td>
+        <td><%= scaffold_blog.description %></td>
+        <td><%= link_to 'Show', scaffold_blog %></td>
+        <td><%= link_to 'Edit', edit_scaffold_blog_path(scaffold_blog) %></td>
+        <td><%= link_to 'Destroy', scaffold_blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scaffold Blog', new_scaffold_blog_path %>
