@@ -23,4 +23,13 @@ class BlogController < ApplicationController
         @post = Post.find(params[:id])
         # @id = params[:id]
     end
+
+    def updateAction
+        post = Post.find(params[:id])
+        post.title = params[:title]
+        post.description = params[:description]
+        post.save
+
+        redirect_to '/home'
+    end
 end

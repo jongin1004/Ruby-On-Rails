@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "/plus/:num1/:num2" => "calculator#plus"
   post "/create" => "blog#create"
   get "/update/:id" => "blog#update"
+  post "/updateAction" => "blog#updateAction"
 end

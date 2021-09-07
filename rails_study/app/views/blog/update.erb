@@ -1,7 +1,8 @@
-<%= form_tag "/update", method: :post do %>
+<%= form_tag "/updateAction", method: :post do %>
     <label for="title">제목</label>
     <input type="text" name="title" value="<%= @post.title %>"/><br />
     <label for="description">내용</label>
     <input type="text" name="description" value="<%= @post.description %>"/><br />
+    <input type="hidden" name="id" value="<%= @post.id %>">
     <button type="submit">제출</button>
 <% end %>
