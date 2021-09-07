@@ -11,4 +11,5 @@
 </p>
 
 <%= link_to 'Edit', edit_scaffold_blog_path(@scaffold_blog) %> |
+<%= link_to 'Destroy', @scaffold_blog, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', scaffold_blogs_path %>
