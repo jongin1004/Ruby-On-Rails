@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post "/create" => "blog#create"
   get "/update/:id" => "blog#update"
   post "/updateAction" => "blog#updateAction"
+  get "/delete/:id" => "blog#delete"
 end

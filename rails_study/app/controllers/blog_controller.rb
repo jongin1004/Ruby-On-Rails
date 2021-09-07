@@ -32,4 +32,10 @@ class BlogController < ApplicationController
 
         redirect_to '/home'
     end
+
+    def delete
+        Post.destroy(params[:id])
+
+        redirect_to '/home'
+    end
 end
