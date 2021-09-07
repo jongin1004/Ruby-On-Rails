@@ -18,4 +18,9 @@ class BlogController < ApplicationController
 
         redirect_to '/home'
     end
+
+    def update
+        @post = Post.find(params[:id])
+        # @id = params[:id]
+    end
 end
