@@ -1,18 +1,15 @@
-<% @posts.each do |post| %>
+<% @posts.each_with_index do |post, index| %>
 <p>
-    제목 : <%= post.title %>
+    <span><%= index + 1 %></span>
+    <a href="/show/<%= post.id %>">
+        <%= post.title %>
+    </a>    
 </p>
-
-<p>
-    내용 : <%= post.description %>
-</p>
-<a href="/update/<%= post.id %>">수정하기</a>
-<a href="/delete/<%= post.id %>">삭제</a>
 <hr>
 <% end %>
 
 
-<%= form_tag "/create", method: :post do %>
+<%= form_tag "/post/create", method: :post do %>
     <label for="title">제목</label>
     <input type="text" name="title" /><br />
     <label for="description">내용</label>

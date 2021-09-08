@@ -1,0 +1,28 @@
+<div>
+    제목 : <%= @post.title %>
+</div>
+<div>
+    내용 : <%= @post.description %>
+</div>
+
+<a href="/update/<%= @post.id %>">수정하기</a>
+<a href="/delete/<%= @post.id %>">삭제</a>
+<hr>
+<h3>댓글</h3>
+
+<% @comments.each_with_index do |comment, index| %>
+<div>
+    <span><%= index + 1 %></span>    
+    <%= comment.comment %>
+    <a href="/comment/delete/<%= comment.id %>">
+        삭제하기
+    </a>
+</div>
+<hr>
+<% end %>
+<%= form_tag "/comment/create", method: :post do %>
+    <label for="comment">내용</label>
+    <input type="text" name="comment" />
+    <input type="hidden" name="id" value="<%= @post.id %>">
+    <button type="submit">제출</button>
+<% end %>

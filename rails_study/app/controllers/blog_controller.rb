@@ -8,6 +8,11 @@ class BlogController < ApplicationController
         @check = false
     end
 
+    def show
+        @post = Post.find(params[:id])
+        @comments = PostComment.where(post_id: params[:id])
+    end
+
     # create액션은 저장역할만하고, 다른 view파일을 보여줄 필요가없음
     #redirect_to를 이용해서 다른 url로 보냄
     def create

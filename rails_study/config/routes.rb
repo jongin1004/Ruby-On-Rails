@@ -11,8 +11,11 @@ Rails.application.routes.draw do
   # get "/result" => "calculator#result"
   # post "/result" => "calculator#result"
   # get "/plus/:num1/:num2" => "calculator#plus"
-  post "/create" => "blog#create"
+  post "/post/create" => "blog#create"
   get "/update/:id" => "blog#update"
   post "/updateAction" => "blog#updateAction"
   get "/delete/:id" => "blog#delete"
+  get "/show/:id" => "blog#show"
+  post "/comment/create" => "post_comments#create"
+  get "comment/delete/:id" => "post_comments#destroy"
 end
