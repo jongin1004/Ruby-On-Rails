@@ -5,8 +5,12 @@
     내용 : <%= @post.description %>
 </div>
 
-<a href="/update/<%= @post.id %>">수정하기</a>
-<a href="/delete/<%= @post.id %>">삭제</a>
+<a href="/update/<%= @post.id %>">
+    <button type="button" class="btn btn-primary">수정하기</button>
+</a>
+<a href="/delete/<%= @post.id %>">
+    <button type="button" class="btn btn-dark">삭제</button>
+</a>
 <hr>
 <h3>댓글</h3>
 

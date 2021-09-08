@@ -35,7 +35,7 @@ class BlogController < ApplicationController
         post.description = params[:description]
         post.save
 
-        redirect_to '/home'
+        redirect_to "/show/#{params[:id]}"
     end
 
     def delete

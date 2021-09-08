@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'articles/index'
   resources :scaffold_blogs do
     resources :comments
   end
