@@ -19,6 +19,7 @@
   <div>
     <%= index + 1 %>
     <%= comment.comment %>
+    <%= link_to 'Destroy', [comment.scaffold_blog, comment], method: :delete, data: { confirm: 'Are you sure?' } %> 
   </div>
   <hr>
 <% end %>
