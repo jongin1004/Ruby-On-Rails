@@ -1,4 +1,6 @@
 class ScaffoldBlogsController < ApplicationController
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  
   # only: %i[ show edit update destroy ]부분의 함수가 실행될 땐 set_scaffold_blog라는 함수를 실행해라
   before_action :set_scaffold_blog, only: %i[ show edit update destroy ]
 

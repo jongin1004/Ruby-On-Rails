@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'articles/index'
   resources :scaffold_blogs do
     resources :comments
   end
@@ -19,4 +18,10 @@ Rails.application.routes.draw do
   get "/show/:id" => "blog#show"
   post "/comment/create" => "post_comments#create"
   get "comment/delete/:id" => "post_comments#destroy"
+  get '/articles' => "articles#index"
+  get "/articles/new" => "articles#new"
+  post "/articles" => "articles#create"
+  get "/articles/:id/edit" => "articles#edit"
+  get "/articles/:id" => "articles#show"
+  delete "/articles/:id" => "articles#destroy"
 end

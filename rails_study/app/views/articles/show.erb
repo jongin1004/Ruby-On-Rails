@@ -1,0 +1,12 @@
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+
+<ul>
+  <li><%= link_to "Edit", "/articles/#{@article.id}/edit" %></li>
+  <%# method: :delete옵션은 링크가 DELETE요청 대신 요청 을 하도록 합니다 %>
+  <%# data옵션은 대화상자 기능을 구현해줍니다. 취소하면 요청이 중단 %>
+  <li><%= link_to "Destroy", "/articles/#{@article.id}",
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>

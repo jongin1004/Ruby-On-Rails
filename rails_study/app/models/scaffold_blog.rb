@@ -1,3 +1,4 @@
 class ScaffoldBlog < ApplicationRecord
-    has_many :comments
+    # dependenet CASCADE와 같다. 
+    has_many :comments, dependent: :destroy
 end
