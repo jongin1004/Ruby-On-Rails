@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <nav class="navbar mx-2 mb-4 p-2">
+      <a href="" class="navbar-brand">
+        <%= fa_icon "youtube-play", class: "text-danger" %>
+        RUTUBE
+      </a>
+      <div>
+        <% if user_signed_in? %>
+          <%= link_to "로그아웃", destroy_user_session, method: "delete" %>
+        <% else %>
+          <%= link_to "로그인", user_session_path, class: "btn btn-primary" %>
+          <%= link_to "회원가입", new_user_registration_path, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
