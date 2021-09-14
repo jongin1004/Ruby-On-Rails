@@ -1,24 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
+<%= video_tag @video.file.url, controls: true, class: "w-100" if @video.file? %>
+<h3>
   <%= @video.title %>
-</p>
+</h3>  
+작성자: <%= @video.user.email %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @video.description %>
-</p>
+<%= simple_format @video.description %>
 
-<p>
-  <strong>User:</strong>
-  <%= @video.user_id %>
-</p>
+조회수: <%= @video.view_count.to_i %>
 
-<p>
-  <strong>View count:</strong>
-  <%= @video.view_count %>
-</p>
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<%= link_to '수정', edit_video_path(@video), class: "btn btn-danger" %>
+<%= link_to '삭제', @video, method: :delete, class: "btn btn-outline-danger" %>
+ 

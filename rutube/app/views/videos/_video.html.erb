@@ -2,10 +2,12 @@
     <div class="card">
         <%= image_tag video.image.url, class: "w-100" if video.image? %>
         <div class="card-body">
+            <%= link_to video, class: "text-dark" do %>
             <strong><%= video.title %></strong>
             <%# truncate + length => 글자수 제한, omission => length를 넘었을 때, 보여주고 싶은 문자를 넣을 수 있음 %>
             <p class="small"><%= truncate video.description, length: 30, omission: "#{video.description[0..30]}..." %></p>
             <p class="text-gray small"><%= time_ago_in_words video.created_at %>전, 조회수 <%= video.view_count.to_i %></p>
+            <% end %>
         </div>
     </div>
 </div>  
