@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # 로그인 관련 기능 언어변경
 gem 'devise-i18n'
+# 프로젝트 레벨에서 다국어 처리
+gem 'rails-i18n'
 # bootstrap 추가
 gem 'bootstrap'
 gem 'font-awesome-rails'
