@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_action :authenticate_user!, onlyy: [:create, :new, :update, :destroy, :edit]
   before_action :set_video, only: %i[ show edit update destroy ]
 
   # GET /videos or /videos.json
@@ -22,6 +23,7 @@ class VideosController < ApplicationController
   # POST /videos or /videos.json
   def create
     @video = Video.new(video_params)
+    @video.user = current_user
 
     respond_to do |format|
       if @video.save
@@ -64,6 +66,6 @@ class VideosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def video_params
-      params.require(:video).permit(:title, :description, :user_id, :view_count)
+      params.require(:video).permit(:title, :description, :file, :image)
     end
 end
