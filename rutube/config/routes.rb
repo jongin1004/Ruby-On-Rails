@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :videos
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get '/' => 'teest#index'
-  get '/test' => 'teest#test'
+  root "videos#index"
 end

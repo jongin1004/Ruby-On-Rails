@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_13_084733) do
+ActiveRecord::Schema.define(version: 2021_09_14_074214) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +24,16 @@ ActiveRecord::Schema.define(version: 2021_09_13_084733) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "user_id", null: false
+    t.integer "view_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_videos_on_user_id"
+    t.index ["view_count"], name: "index_videos_on_view_count"
+  end
+
+  add_foreign_key "videos", "users"
 end
