@@ -5,7 +5,8 @@ class VideosController < ApplicationController
 
   # GET /videos or /videos.json
   def index
-    @videos = Video.all
+    # page라는 파라미터를 받고, 한 페이지에 per(4) 4개씩 불러오겠다. 
+    @videos = Video.all.page(params[:page]).per(4)
   end
 
   # GET /videos/1 or /videos/1.json

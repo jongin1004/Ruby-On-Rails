@@ -25,7 +25,9 @@ gem 'devise-i18n'
 # 프로젝트 레벨에서 다국어 처리
 gem 'rails-i18n'
 #파일업로드를 위해서
-gem 'carrierwave'
+gem 'carrierwave', '~> 2.0'
+# 페이지네이션
+gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 # bootstrap 추가
 gem 'bootstrap'
 gem 'font-awesome-rails'
