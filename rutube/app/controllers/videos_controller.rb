@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!, onlyy: [:create, :new, :update, :destroy, :edit]
   before_action :set_video, only: %i[ show edit update destroy ]
+  before_action :check_owner, only: [:edit, :updata, :destroy]
 
   # GET /videos or /videos.json
   def index
@@ -9,6 +10,8 @@ class VideosController < ApplicationController
 
   # GET /videos/1 or /videos/1.json
   def show
+    # show화면에 들어올 때마다, increment!로 view_count 속성값을 1씩 증가시키기 
+    @video.increment!(:view_count)
   end
 
   # GET /videos/new
@@ -67,5 +70,9 @@ class VideosController < ApplicationController
     # Only allow a list of trusted parameters through.
     def video_params
       params.require(:video).permit(:title, :description, :file, :image )
+    end
+
+    def check_owner
+      redirect_to main_path unless @video.user == current_user 
     end
 end
