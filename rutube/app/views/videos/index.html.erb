@@ -1,4 +1,6 @@
 <div class="row">
   <%= render @videos %>
 </div>
-<%= paginate @videos, window: 2 %>
+<nav>
+  <%= paginate @videos %>
+</nav>

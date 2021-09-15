@@ -15,7 +15,11 @@
       <a href="<%= main_path %>" class="navbar-brand">      
         <%= fa_icon "youtube-play", class: "text-danger" %>
         <strong>RUTUBE</strong>      
-      </a>
+      </a>    
+      <%= form_tag videos_path, method: :get, class: "form-inline" do %>
+        <%= text_field_tag :q, params[:q], class: "form-control" %>
+        <%= submit_tag "검색", class: "btn btn-danger" %>
+      <% end %>
       <div>
         <% if user_signed_in? %>
           <%= link_to "업로드", new_video_path, class: "btn btn-danger" %>
