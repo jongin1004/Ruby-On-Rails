@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 
     def destroy
         @comment = current_user.comments.find params[:id]
+        @video = @comment.video
         @comment.destroy
     end
 
