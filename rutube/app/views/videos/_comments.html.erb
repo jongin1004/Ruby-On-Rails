@@ -1,0 +1,13 @@
+댓글 (<%= @video.comments.count %>)
+<hr>
+<% @video.comments.each do |comment| %>
+    작성자: <%= comment.user.email %>, <%= time_ago_in_words comment.created_at %>
+    <%= simple_format comment.body %>
+<% end %>
+<%= form_for Comment.new, remote: true do |f| %>
+    <div class="form-group">
+        <%= f.hidden_field :video_id, value: @video.id %>
+        <%= f.text_area :body, class: "form-control" %>
+    </div>
+    <%= f.submit "작성", class: "btn btn-danger" %>
+<% end %>
