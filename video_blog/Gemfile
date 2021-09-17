@@ -23,6 +23,10 @@ gem 'devise'
 gem 'rails-i18n'
 # bootstrap
 gem 'bootstrap'
+#rails db
+gem 'rails_db'
+#file 관리
+gem 'carrierwave', '~> 2.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

@@ -11,7 +11,27 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-black text-white">
-    <%= yield %>    
+  <body class="bg-gray-700 text-gray-400 mx-4">
+    <nav class="p-2 mb-2">
+      <div class="flex ...">
+        <div class="flex-grow h-16 ...">
+          이미지
+          <strong><%= link_to "JONGTUBE", main_path %></strong>
+        </div>
+        <div class="flex-grow-0 h-16 ...">
+          
+        </div>
+        <div class="flex-grow h-16 ...">
+          <%= link_to 'New Video', new_video_path, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body row">
+          <%= yield %>
+        </div>
+      </div>
+    </div>   
   </body>
 </html>
