@@ -13,15 +13,22 @@
 
   <body class="bg-gray-700 text-gray-400 mx-4">
     <nav class="p-2 mb-2">
-      <div class="flex ...">
-        <div class="flex-grow h-16 ...">
+      <div class="flex justify-between items-center">
+        <div>
           이미지
           <strong><%= link_to "JONGTUBE", main_path %></strong>
         </div>
-        <div class="flex-grow-0 h-16 ...">
-          
+        <div>
+          <div class="w-64">                     
+            <%= form_tag videos_path, method: :get  do %>            
+              <%# 두번째 인자로 params[:search]를 보내줌으로써 검색후에도 검색창에 검색어가 남아있도록 %>
+              <%= text_field_tag :search, params[:search], class: "rounded-full focus:ring-2 focus:ring--600 focus:border-transparent w-full px-2 py-1" %>
+              <%# :name => nil 속성을 사용하면 URL의 검색어에서 commit 키워드를 제거할 수 있습니다. %>
+              <%# <%= submit_tag("Search", :name => nil, class: "h-full bg-yellow-500 hover:bg-yellow-400") %> 
+            <% end %>
+          </div>
         </div>
-        <div class="flex-grow h-16 ...">
+        <div>
           <% if user_signed_in? %>
             <%= link_to "업로드", new_video_path, class: "btn btn-danger" %>
             <%= link_to "로그아웃", destroy_user_session_path, method: "delete", class: "btn btn-primary" %>

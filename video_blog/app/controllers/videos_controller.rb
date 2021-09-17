@@ -4,7 +4,8 @@ class VideosController < ApplicationController
 
   # GET /videos or /videos.json
   def index
-    @videos = Video.all.page(params[:page]).per(4)
+    @videos = Video.search(params[:search])
+    @videos = @videos.page(params[:page]).per(4)
   end
 
   # GET /videos/1 or /videos/1.json
@@ -66,6 +67,6 @@ class VideosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def video_params
-      params.require(:video).permit(:title, :description, :file, :image)
+      params.require(:video).permit(:title, :description, :file, :image, :search)
     end
 end
