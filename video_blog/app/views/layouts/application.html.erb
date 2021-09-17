@@ -22,7 +22,13 @@
           
         </div>
         <div class="flex-grow h-16 ...">
-          <%= link_to 'New Video', new_video_path, class: "btn btn-danger" %>
+          <% if user_signed_in? %>
+            <%= link_to "업로드", new_video_path, class: "btn btn-danger" %>
+            <%= link_to "로그아웃", destroy_user_session_path, method: "delete", class: "btn btn-primary" %>
+          <% else %>
+            <%= link_to "로그인", user_session_path, class: "btn btn-primary" %>
+            <%= link_to "회원가입", new_user_registration_path, class: "btn btn-primary" %>
+          <% end %>
         </div>
       </div>
     </nav>

@@ -1,11 +1,15 @@
 <div class="col-3">
-    <div class="card">
-        <%= image_tag video.image.url, class: "w-100" if video.image? %>
-        <div class="card-body">
-        <p>작성자: <%= video.user_id %></p>
-        <h5 class="card-title"><%= video.title %></h5>
-        <p class="card-text"><%= video.description %></p>
-        <p><%= time_ago_in_words video.created_at %> 전, 조회수 :<%= video.view_count.to_i %></p>
-        </div>   
-    </div>
+    <%= link_to(video) do %>
+        <div class="card">
+            <div class="h-32">
+                <%= image_tag video.image.url, class: "w-full h-full" if video.image? %>
+            </div>
+            <div class="card-body">
+            <p>작성자: <%= video.user_id %></p>
+            <h5 class="card-title"><%= video.title %></h5>
+            <p class="card-text"><%= video.description %></p>
+            <p><%= time_ago_in_words video.created_at %> 전, 조회수 :<%= video.view_count.to_i %></p>
+            </div>   
+        </div>
+    <% end %>
 </div> 

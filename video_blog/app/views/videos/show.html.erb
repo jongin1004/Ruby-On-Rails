@@ -1,24 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%= video_tag @video.file.url, controls: true ,autoplay: true if @video.file? %>
 
-<p>
+<p class="p-2">
   <strong>Title:</strong>
   <%= @video.title %>
 </p>
 
-<p>
+<p class="p-2">
+  <strong>View count:</strong>
+  <%= @video.view_count.to_i %> / <%= @video.created_at.to_s[0..10] %> | <%= time_ago_in_words @video.created_at %> 전
+</p>
+<hr>
+
+<p class="p-2">
+  <strong>User:</strong>
+  <%= @video.user.email %>
+</p>
+
+<p class="p-2"> 
   <strong>Description:</strong>
   <%= @video.description %>
 </p>
+<hr>
 
-<p>
-  <strong>User:</strong>
-  <%= @video.user_id %>
-</p>
+<% if current_user && (@video.user == current_user) %>
+  <div class="text-center mt-2">
+    <%= link_to '수정', edit_video_path(@video), class: "btn btn-danger" %>
+    <%= link_to '메인', videos_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
 
-<p>
-  <strong>View count:</strong>
-  <%= @video.view_count %>
-</p>
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
