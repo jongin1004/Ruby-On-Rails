@@ -1,0 +1,7 @@
+<% unless !comment.persisted? %>
+    <div class="p-2">
+        <p><%= comment.video.user.email %></p>
+        <%= comment.body %>
+    </div>
+    <hr>
+<% end %>
