@@ -27,6 +27,9 @@ gem 'bootstrap'
 gem 'rails_db'
 #file 관리
 gem 'carrierwave', '~> 2.0'
+# pagination
+gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
