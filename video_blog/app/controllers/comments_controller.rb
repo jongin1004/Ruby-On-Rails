@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    @video = Video.find(params[:video_id])
+    @comment = @video.comments.new(parent_id: params[:parent_id])    
   end
 
   # GET /comments/1/edit
