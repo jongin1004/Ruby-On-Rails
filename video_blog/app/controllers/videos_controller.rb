@@ -9,7 +9,9 @@ class VideosController < ApplicationController
   end
 
   # GET /videos/1 or /videos/1.json
-  def show
+  def show    
+    Video.increment_counter(:view_count, params[:id])
+    @video = self.set_video
   end
 
   # GET /videos/new
