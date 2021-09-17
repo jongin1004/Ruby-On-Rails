@@ -15,17 +15,21 @@
     <nav class="p-2 mb-2">
       <div class="flex justify-between items-center">
         <div>
-          이미지
-          <strong><%= link_to "JONGTUBE", main_path %></strong>
-        </div>
+          <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 461.001 461.001" xml:space="preserve"><path d="M365.257 67.393H95.744C42.866 67.393 0 110.259 0 163.137v134.728c0 52.878 42.866 95.744 95.744 95.744h269.513c52.878 0 95.744-42.866 95.744-95.744V163.137c0-52.878-42.866-95.744-95.744-95.744zm-64.751 169.663-126.06 60.123c-3.359 1.602-7.239-.847-7.239-4.568V168.607c0-3.774 3.982-6.22 7.348-4.514l126.06 63.881c3.748 1.899 3.683 7.274-.109 9.082z" fill="#f61c0d"/></svg>
+          <strong class="inline-block"><%= link_to "JONGTUBE", main_path %></strong>
+        </div>        
         <div>
-          <div class="w-64">                     
+          <div class="relative w-64">                     
             <%= form_tag videos_path, method: :get  do %>            
               <%# 두번째 인자로 params[:search]를 보내줌으로써 검색후에도 검색창에 검색어가 남아있도록 %>
-              <%= text_field_tag :search, params[:search], class: "rounded-full focus:ring-2 focus:ring--600 focus:border-transparent w-full px-2 py-1" %>
+              <%= text_field_tag :search, params[:search], class: "rounded-full focus:ring-2 focus:ring--600 focus:border-transparent pl-8 py-1 w-full" %>
+              
               <%# :name => nil 속성을 사용하면 URL의 검색어에서 commit 키워드를 제거할 수 있습니다. %>
               <%# <%= submit_tag("Search", :name => nil, class: "h-full bg-yellow-500 hover:bg-yellow-400") %> 
             <% end %>
+            <div class="absolute top-0">
+                <svg class="fill-current w-4 text-gray-500 mt-2 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.894 45.894"><path d="M2.512 43.883c1.387 1.307 3.953.834 5.732-1.054l9.364-9.94a17.517 17.517 0 0010.668 3.62c9.73 0 17.618-7.888 17.618-17.619 0-9.729-7.888-17.618-17.618-17.618-9.731 0-17.619 7.888-17.619 17.618 0 3.552 1.06 6.852 2.868 9.618-.988.219-2.009.785-2.853 1.681L0 41.517l2.512 2.366zM28.276 5.971c7.136 0 12.92 5.784 12.92 12.919 0 7.136-5.784 12.92-12.92 12.92-7.135 0-12.92-5.784-12.92-12.92 0-7.135 5.785-12.919 12.92-12.919z" fill="#010002"/></svg>
+            </div>
           </div>
         </div>
         <div>
