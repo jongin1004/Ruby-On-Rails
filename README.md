@@ -18,6 +18,11 @@ devise를 설치하면 다양한 기능을 사용할 수 있는데, 자주 사�
 
 ```rails generate devise:views``` 명령어를 사용하여, 로그인 관련 page를 수정도 할 수 있다. 
 
+
+#### 참고자료
+https://github.com/heartcombo/devise
+
+
 ## ```gem 'rails-i18l'```
 ---------
 rails의 언어팩을 바꿀 수 있다. 
@@ -48,6 +53,8 @@ index.html.erb<br>
 위에는 bootstrap4를 사용했는데, 다른 theme도 사용가능하다. 
 ![image](https://user-images.githubusercontent.com/65009016/133880640-a9e37a1a-fca3-4c0e-8740-21d3433da081.png)
 
+#### 참고자료
+https://github.com/kaminari/kaminari
 
 ## ```gem 'bootstrap'```
 ---------
@@ -55,7 +62,10 @@ bootstap를 사용가능하도록 해준다.
 
 ### 설치방법
 app/assets/stylesheets/application.scss 파일에서<br>
-```@import "bootstrap";``` 
+```@import "bootstrap";```
+
+#### 참고문헌
+https://github.com/twbs/bootstrap-rubygem
 
 
 ## ```gem 'carrierwave', '~> 2.0'```
@@ -84,11 +94,15 @@ rails db:migrate
 --------
 
 ##### 이미지
-```<%= image_tag video.image.url, class: "w-full h-full" if video.image? %>```
+```<%= image_tag video.image.url, class: "w-full h-full" if video.image? %>```<br>
 video에 image가 존재할 경우에만, image파일이 출력되도록 
 
 
 ##### 동영상
-```<%= video_tag @video.file.url, controls: true ,autoplay: true if @video.file? %>```
-```controls: true```영상 control을 가능하도록
+```<%= video_tag @video.file.url, controls: true ,autoplay: true if @video.file? %>```<br>
+```controls: true```영상 control을 가능하도록<br>
 ```autoplay: true```화면이 새로고침 되었을 때, 자동적으로 영상이 플레이되도록
+
+
+#### 참고자료
+https://github.com/carrierwaveuploader/carrierwave
